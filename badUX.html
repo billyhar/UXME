@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bad UX</title>
+
+  <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+  <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="introjs.css" rel="stylesheet">
+<script src="intro.js"></script>
+
+  </head>
+
+  <body>
+    <div data-intro="<h3>Welcome to UX ME!</h3> This tutorial will demonstrate some of the techniques of how not to create user interfaces and experiences. Skip through the sections by pressing the next button or arrow keys to see the different elements and why they are important."></div>
+
+
+
+
+<!-- //navbar -->
+<ul style="margin-top: 2%;" class="main-navigation" data-intro="Navigation bar is poorly formatted with no outstanding features and logo. Colour is flat and navbar is not fixed to the top of the browser window. ">
+  <li><a data-intro="Usually the home button is a clickable logo instead of an extra link in the navbar. The ordering of links is incorrect also, often they are in" href="#">Home</a></li>
+  <li data-intro="Login button is hidden underneath several layers of drop down menus, an important button like this should be clearly visible. See if you can find the button." ><a href="#">About Us</a>
+    <ul>
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a>
+        <ul>
+          <li><a href="#">Resets</a></li>
+          <li><a href="#">Grids</a></li>
+          <li><a href="#">Frameworks</a></li>
+        </ul>
+      </li>
+      <li><a href="#">JavaScript</a>
+        <li><a id="loginbtn" href="login.html"><span><strong>Login</strong></span></a></li>
+
+        <ul>
+
+          <li><a href="#">jQuery</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#">Our Services</a>
+    <ul>
+      <li><a href="#">Themes</a></li>
+      <li><a href="#">Plugins</a></li>
+      <li><a href="#">Custom Post Types</a>
+        <ul>
+          <li><a href="#">Portfolios</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Options</a></li>
+    </ul>
+  </li>
+  <li><div id="toggles">
+  <input type="checkbox" name="checkbox1" id="checkbox1" class="ios-toggle" checked/>
+  <label for="checkbox1" class="checkbox-label" data-off="Good UX Site" data-on="Bad UX Site"></label>
+  </div> </li>
+</ul>
+
+
+
+
+
+<h1 class="text-center" data-hint="Notice that there is an overflow of space on the right hand side. This means that an element has a margin pushing outside the boundaries of the width of the screen. This not only looks bad, it makes the site hard to navigate when scrolling." data-intro="Font style is default so it is not not visually appealing. No background image/colour makes the site look very bland. Red against black background clashes and is difficult to read.">THIS IS BAD UX.</h1>
+<button class="tut-start"><a href="javascript:void(0)" onclick="introJs().start();"
+  data-intro="Really small button that doesn't stand out at all, It has the default browser styling which is ugly.">Start the tutorial</a></button>
+  <br>
+<button class="tut-start">  <a href="javascript:void(0);" onclick="introJs().addHints();" data-intro="Button should not be the same size as the one above, also styled badly with extreme lack of padding and layout issues. Button name should be short one or two words." data-position="top" class="page-scroll btn btn-md">See some handy UX tips</a></button>
+
+
+
+<div class="panel1">
+<!-- Services Section -->
+<section id="services"
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 data-hint="Try making heading titles a different colour to your body text. This can make it alot easier for a user to read content on your website. It also enables people to distinguish different sections easily." style="font-size:50px;" class="section-heading">Attributes Of Good UX Design</h2>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="row text-center" data-intro="No hierarchy of font, all the same size, style and colour, very hard to distinguish between titles and paragraph text. " data-position="top">
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Simple and Symmetrical Aesthetics</h4>
+                <p class="text-muted">When a design is simple it is much more understandable and readable to the user. Consistant and repetitive layout patterns are pleasing to look at and can encourage user engagement. </p>
+            </div>
+            <br>
+            <div data-hint="Try and adjust the size of your window, you will notice that all the elements are not correctly formatted for responsiveness. Some of the text is cut off and the overall site becomes pretty unreadable on any device smaller than a laptop." class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                </span>
+                <br>
+                <h4 class="service-heading">Responsive Design</h4>
+                <p class="text-muted">Making websites compatible on a multitude of devices means more accessibility and less maintenance for designers and developers.</p>
+            </div>
+            <br>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-male fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Adaptive to Users</h4>
+                <p class="text-muted"> Designers need to focus primarily on how a user would interact with the site. A users joy can quickly change to frustration if a feature is not where it is supposed to be. </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="panel2">
+
+  <div class="container">
+      <div class="row">
+      </div>
+      <br><br><br><br>
+      <div class="row" data-intro="More in-depth information about site features. The layout of this section commonly has an image on one side and text on another. If there are multiple elements this layout is often reversed to bring variety to the container. Usually this section shows a further explanation of the services that a website provides" data-position="top" data-hint="Front-end web frameworks such as Bootstrap are incredibly handy for laying out responsive content on a website or app. The graphs below and this entire website are built using the Bootstrap grid system Click <a href='http://www.bootstrap.com'>here</a> to see more information about Bootstrap" >
+          <div class="col-md-6">
+        <div data-hint="Keep the amount of text content on a website to a minimum, only show what is absolutely necassary. The less content there is the more likely a user is going to read it!"></div>
+          </div>
+            <div class="col-md-6">
+            <h2>Demonstrating Dynamics</h2>
+            <br>
+          <p>Using complicated data tables can be very overwelming for a user. Any over complicated interface can put a user off using a website and large sets of information can be distracting. Below is an example of how not to display your data on a website. </p>
+<br>
+<br>
+          <table style="color: #fff;" id="example" class="display" cellspacing="0" width="100%">
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Position</th>
+                          <th>Office</th>
+                          <th>Age</th>
+                          <th>Start date</th>
+                          <th>Salary</th>
+                      </tr>
+                  </thead>
+                  <tfoot>
+                      <tr>
+                          <th>Name</th>
+                          <th>Position</th>
+                          <th>Office</th>
+                          <th>Age</th>
+                          <th>Start date</th>
+                          <th>Salary</th>
+                      </tr>
+                  </tfoot>
+                  <tbody>
+                      <tr>
+                          <td>Tiger Nixon</td>
+                          <td>System Architect</td>
+                          <td>Edinburgh</td>
+                          <td>61</td>
+                          <td>2011/04/25</td>
+                          <td>$320,800</td>
+                      </tr>
+                      <tr>
+                          <td>Garrett Winters</td>
+                          <td>Accountant</td>
+                          <td>Tokyo</td>
+                          <td>63</td>
+                          <td>2011/07/25</td>
+                          <td>$170,750</td>
+                      </tr>
+                      <tr>
+                          <td>Ashton Cox</td>
+                          <td>Junior Technical Author</td>
+                          <td>San Francisco</td>
+                          <td>66</td>
+                          <td>2009/01/12</td>
+                          <td>$86,000</td>
+                      </tr>
+                      <tr>
+                          <td>Cedric Kelly</td>
+                          <td>Senior Javascript Developer</td>
+                          <td>Edinburgh</td>
+                          <td>22</td>
+                          <td>2012/03/29</td>
+                          <td>$433,060</td>
+                      </tr>
+                      <tr>
+                          <td>Airi Satou</td>
+                          <td>Accountant</td>
+                          <td>Tokyo</td>
+                          <td>33</td>
+                          <td>2008/11/28</td>
+                          <td>$162,700</td>
+                      </tr>
+                      <tr>
+                          <td>Brielle Williamson</td>
+                          <td>Integration Specialist</td>
+                          <td>New York</td>
+                          <td>61</td>
+                          <td>2012/12/02</td>
+                          <td>$372,000</td>
+                      </tr>
+                      <tr>
+                          <td>Herrod Chandler</td>
+                          <td>Sales Assistant</td>
+                          <td>San Francisco</td>
+                          <td>59</td>
+                          <td>2012/08/06</td>
+                          <td>$137,500</td>
+                      </tr>
+                      <tr>
+                          <td>Rhona Davidson</td>
+                          <td>Integration Specialist</td>
+                          <td>Tokyo</td>
+                          <td>55</td>
+                          <td>2010/10/14</td>
+                          <td>$327,900</td>
+                      </tr>
+                      <tr>
+                          <td>Colleen Hurst</td>
+                          <td>Javascript Developer</td>
+                          <td>San Francisco</td>
+                          <td>39</td>
+                          <td>2009/09/15</td>
+                          <td>$205,500</td>
+                      </tr>
+                      <tr>
+                          <td>Sonya Frost</td>
+                          <td>Software Engineer</td>
+                          <td>Edinburgh</td>
+                          <td>23</td>
+                          <td>2008/12/13</td>
+                          <td>$103,600</td>
+                      </tr>
+                      <tr>
+                          <td>Jena Gaines</td>
+                          <td>Office Manager</td>
+                          <td>London</td>
+                          <td>30</td>
+                          <td>2008/12/19</td>
+                          <td>$90,560</td>
+                      </tr>
+                      <tr>
+                          <td>Quinn Flynn</td>
+                          <td>Support Lead</td>
+                          <td>Edinburgh</td>
+                          <td>22</td>
+                          <td>2013/03/03</td>
+                          <td>$342,000</td>
+                      </tr>
+                      <tr>
+                          <td>Charde Marshall</td>
+                          <td>Regional Director</td>
+                          <td>San Francisco</td>
+                          <td>36</td>
+                          <td>2008/10/16</td>
+                          <td>$470,600</td>
+                      </tr>
+                      <tr>
+                          <td>Haley Kennedy</td>
+                          <td>Senior Marketing Designer</td>
+                          <td>London</td>
+                          <td>43</td>
+                          <td>2012/12/18</td>
+                          <td>$313,500</td>
+                      </tr>
+                      <tr>
+</table>
+
+          <br>
+          <button data-hint="Adding large text and small paddings to buttons can make them seem unnattractive, try increasing vertical paddings to make the surface area of the button thicker and decreasing the inside font size to center it in the middle." class="btn btn-lg text-center " style="width:30% height: 4rem; font-size: 1.5rem; background-color:#DB162F; color:#fff; font-family: 'Montserrat">This doesn't do anything</button>
+          </div>
+      </div>
+      <div style="margin-top: 10%;" class="row">
+        <div class="col-md-6" style="margin-top: 10%;">
+        <h2>Pretty Pictures</h2>
+          <p>Using animations or GIFS to show off your products can also be beneficial. Showing small walkthroughs of user-interfaces, like the one on the right, can boost a user's knowledge of how to interact with you site.  </p>
+        </div>
+        <div class="col-md-6">
+        <div data-hint="Using massive widescreen images is not ideal when showing off a feature of your website. Exceptions to this could be if the image was in the background as a 'hero' image. style="width:80%;height:0;margin-left: 10%;padding-bottom:67%;position:relative;"><iframe src="https://giphy.com/embed/l3vQXZiBGhxBEALEk" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div><p><a href="https://giphy.com/gifs/ettrics-design-l3vQXZiBGhxBEALEk"></a></p>
+
+        </div>
+      </div>
+  </div>
+
+
+</div>
+
+
+</div>
+
+  </body>
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+<script>
+$(function(){
+$('#checkbox1').click(function() {
+        if(!$(this).is(':checked'))
+        window.location.href = 'index.html';
+        else
+            alert('checked');
+    });
+  });
+</script>
+<script src="js/main.js"></script>
+
+<!-- nextpage -->
+<script type="text/javascript">
+  document.getElementById('startButton').onclick = function() {
+    introJs().setOption('doneLabel', 'Next page').start().oncomplete(function() {
+      window.location.href = 'login.html?multipage=true';
+    });
+  };
+</script>
+
+
+</html>
