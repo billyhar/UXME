@@ -1,95 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+
     <meta charset="utf-8">
-    <title>CCDN331 - Project 4</title>
-    <style>
-      body, html { margin:0; padding:0; height:100%;}
-      body { font-family:sans-serif; }
-      body * { font-weight:200;}
-      #heatmapContainerWrapper { width:100%; height:100%; position:absolute; }
-      #heatmapContainer { width:100%; height:100%;}
-      h1 { position:absolute; background:black; color:white; padding:10px; font-weight:200; z-index:10000;}
-      #all-examples-info { position:absolute; background:white; font-size:16px; padding:20px; top:100px; width:350px; line-height:150%; border:1px solid rgba(0,0,0,.2);}
-    </style>
-  
-  <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-  <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  </head>
+    <title>UXMe</title>
 
-  <body>
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<header>
-  <nav class="cd-stretchy-nav">
-    <a class="cd-nav-trigger" href="#0">
-      Menu
-      <span aria-hidden="true"></span>
-    </a>
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <ul>
-      <li><a href="#0" class="active"><span>Home</span></a></li>
-      <li><a href="#0"><span>Portfolio</span></a></li>
-      <li><a href="#0"><span>Services</span></a></li>
-      <li><a href="#0"><span>Store</span></a></li>
-      <li><a href="#0"><span><strong>Login</strong></span></a></li>
-    </ul>
+<!-- Chartist Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.0/chartist.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.0/chartist.js"></script>
 
-    <span aria-hidden="true" class="stretchy-nav-bg"></span>
-  </nav>
-</header>
+    <!-- Theme CSS -->
+    <link href="css/agency.min.css" rel="stylesheet">
 
-    <div id="heatmapContainerWrapper">
-      <div id="heatmapContainer">
-<h1>The UX Tester</h1>
-<h3>Billy Harris - CCDN 331</h3>
-      </div>
+    <!-- Introjs CSS -->
+    <link href="introjs.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.switchery/0.8.2/switchery.min.css">
+
+
+    <!-- Bootstrap -->
+<!--     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+
+</head>
+
+<body id="page-top" class="index">
+
+    <div data-intro="<h3>Welcome to UX ME!</h3>This tutorial will demonstrate some of the techniques of exemplary UX design in the modern digital age. Skip through the sections by pressing the next button or arrow keys to see the different elements and why they are important.">
+        <!-- Navigation -->
+        <nav style="position:fixed; z-index:1;" id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top" data-intro="Transparent nav background adds to the minimal design. Scroll down the page and you will see the navbar becomes fixed. This means it stays at the top of the browser window even when you are scrolling. Having a 'fixed' navbar allows the user to navigate the site even when they are scrolled half way down a page.">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div data-position="right" data-intro="Navbar is simple and organised with bold readable font and logo on the left." class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    </button>
+                    <img class="navbar-brand page-scroll" src="img/logo_head.png">
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div data-intro="Spacing of navbars is important, logo on the left and links on the right is the most common method however centred links underneath a logo is common. Pullout drawer menus made with Javascript are increasingly common to make websites feel more 'app' like" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                          <div id="toggles">
+                          <input type="checkbox" name="checkbox1" id="checkbox1" class="ios-toggle" onclick="checkAddress(this)"/>
+                          <label for="checkbox1" class="checkbox-label" data-off="Good UX Site" data-on="Good UX"></label>
+                        </div>
+                        </li>
+                        <!-- <li>
+                            <a class="page-scroll" href="#portfolio">My UX Research</a> -->
+                        </li>
+                         <li>
+
+                            <a class="page-scroll login-btn" href="#login-modal" data-toggle="modal"><span data-intro="Login button has unique colour from others in the navbar, this makes it more attractive to the user. Buttons such as these should stand out because the user's primary objective when visiting a site is to use/login to the company's service. Click on this button to see the login screen." data-position="left" class="login-style">Login</span></a>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+</div>
+
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="intro-text">
+                    <div data-hint="Using sans-serif websafe fonts such as Montserrat or Helvetica Neue is very beneficial for front-end web design. They are compatible on most browsers and devices and you can find hundreds of websafe fonts on <a href='http://google.com/fonts'>Google Fonts</a>. They are also available as hosted libraries so no need for those pesky font files!!" data-intro="Main outstanding site title against image background, usually used as a tagline or catchphrase for a company. Layout of this title is often left aligned with a featured hero image on the right" class="intro-heading">This is good UX.  </div>
+                    <a href="javascript:void(0)" onclick="introJs().start();" data-intro="Large eye catching button centred in the middle of the page indicating a main feature or action such as a login or a 'Sign Up' button." class="page-scroll btn btn-xl">Start the tutorial</a>
+                    <br>
+                    <br>
+                    <a href="javascript:void(0);" onclick="introJs().addHints();" data-hint="Click on the little red beacons to find some useful UX tips to keep in mind when designing your websites" data-intro="Smaller 'sub' button with no fill, usually used to indicate an additional or optional feature" data-position="top" class="page-scroll btn btn-md">See some handy UX tips</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Services Section -->
+        <section id="services"
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Attributes Of Good UX Design</h2>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                <div class="row text-center" data-position="top">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="service-heading">Simple and Symmetrical Aesthetics</h4>
+                        <p class="text-muted">When a design is simple it is much more understandable and readable to the user. Consistant and repetitive layout patterns are pleasing to look at and can encourage user engagement. </p>
+                    </div>
+
+                    <div data-hint="Try and adjust the size of your window, you will notice that all the elements neatly stack on top of each other in a compressed readable format. This is known as responsive design, which means that it is visually compatible on a large variety of screen sizes and devices" class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <br>
+                        <br>
+                        <h4 class="service-heading">Responsive Design</h4>
+                        <p class="text-muted">Making websites compatible on a multitude of devices means more accessibility and less maintenance for designers and developers.</p>
+                        <br>
+                    </div>
+
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-male fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="service-heading">Adaptive to Users</h4>
+                        <p class="text-muted"> Designers need to focus primarily on how a user would interact with the site. A users joy can quickly change to frustration if a feature is not where it is supposed to be. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     <!-- Chart section -->
+        <section id="chart" class="bg-light-gray">
+            <div class="container">
+                <div class="row">
+                </div>
+                <br><br><br><br>
+                <div class="row" data-intro="More in-depth information about site features. The layout of this section commonly has an image on one side and text on another. If there are multiple elements this layout is often reversed to bring variety to the container. Usually this section shows a further explanation of the services that a website provides" data-position="top" data-hint="Front-end web frameworks such as Bootstrap are incredibly handy for laying out responsive content on a website or app. The graphs below and this entire website are built using the Bootstrap grid system Click <a href='http://www.bootstrap.com'>here</a> to see more information about Bootstrap" >
+                    <div class="col-md-6">
+                  <div data-hint="These animated graphs were made using a JS library called Chartist.js. The data is hard coded into these graphs but they are really useful for making your website and your data look even more attractive! Check out Chartist.js <a href='http://gionkunz.github.io/chartist-js/examples.html#svg-path-animation'>here</a>" class="ct-chart ct-perfect-fourth" id="chart2"></div>
+                    </div>
+                      <div class="col-md-6">
+                      <h2 style="margin-top: 15%;">Demonstrating Dynamics</h2>
+                    <p>Simple, clear infographics can be alot more attractive to a user than static grids of data. User's are much more likely to become engaged in a feature if they like the look of it. Adding vibrant colours and fancy animations can help greatly with this! Often another button is added underneath this text to lead a user to the relevant talked about feature. </p>
+                    <br>
+                    <button class="btn btn-lg text-center " style="width:30% height: 4rem; font-size: 1.5rem; background-color:#DB162F; color:#fff; font-family: 'Montserrat">This doesn't do anything</button>
+                    </div>
+                </div>
+                <div style="margin-top: 10%;" class="row">
+                  <div class="col-md-6" style="margin-top: 10%;">
+                  <h2>Pretty Pictures</h2>
+                    <p>Using animations or GIFS to show off your products can also be beneficial. Showing small walkthroughs of user-interfaces, like the one on the right, can boost a user's knowledge of how to interact with you site.  </p>
+                  </div>
+                  <div class="col-md-6">
+                  <div style="width:80%;height:0;margin-left: 10%;padding-bottom:67%;position:relative;"><iframe src="https://giphy.com/embed/l3vQXZiBGhxBEALEk" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div><p><a href="https://giphy.com/gifs/ettrics-design-l3vQXZiBGhxBEALEk"></a></p>
+
+                  </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Forms thing -->
+
+  <section id="contact">
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                  </div>
+                    <div class="col-md-4 text-center" data-hint="Compare the layout of this form to the layout of the login form in the navbar, see if you can see the similarities." data-position="right" data-intro="Forms are really useful for user engagement also. Placing them after the main content at the bottom of the page is very common in modern UX design. If the user is wanting more information this is a great way to get it to them.
+                    form styling should be consistent across a site. For example the text inputs should be the same colour and size. It is also important to keep form groups consise, for example all that is needed for this is an email address and name.">
+                        <h2 class="section-heading">Get in touch!</h2>
+                        <h3 class="section-subheading text-muted">If you would like to know more about UX techniques fill out the form below!</h3>
+                             <div class="form-group">
+                              <input placeholder="Full Name" type="text" class="form-control" id="usr">
+                            </div>
+                            <div class="form-group">
+                              <input type="text" placeholder="Email Address" class="form-control" id="pwd">
+                            </div>
+                            <button class="btn btn-lg text-center " style="width:30% height: 4rem; font-size: 1.5rem; background-color:#DB162F; color:#fff; font-family: 'Montserrat">Submit</button>
+
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+        </section>
+
+
+
+
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <span class="copyright">Billy Harris - CCDN 331 - Project 4B</span>
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline quicklinks">
+                          <span class="copyright">Victoria University of Wellington - School of Design</span>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Login Modal -->
+        <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+
+
+    <div class="portfolio-modal modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal">
+                        <div class="lr">
+                        <div class="rl">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                                       <!--              <div data-hint="Sleek responsive login form, centred in the middle of the page with comapny logo above is the correct layout for the current standard fors ux design."> -->
+                        <div class="row">
+                            <div class="login">
+                                <div class="login-header">
+                                  <img src="img/UXme.svg"/>
+                                </div>
+                                <div class="login-form">
+
+                                  <input type="text" placeholder="Username"/><br>
+
+                                  <input type="password" placeholder="Password"/>
+                                  <br>
+                                  <input type="button" value="Login" class="login-button"/>
+                                  <br>
+                                  <br>
+                                  <a class="sign-up">Sign Up!</a>
+                                  <br>
+                              </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+  </div>
+
+<script>
+var chart = new Chartist.Pie('#chart1', {
+  series: [10, 30, 50, 5, 5],
+  labels: [1, 2, 3, 4, 5, 6, 7]
+},
+
+ {
+  donut: true,
+  showLabel: true
 
 
- 
-<main class="cd-main-content">
- <!-- your content here -->
-</main>
+});
 
-   
-    <!-- SCRITPS -->
-    <script src="heatmap.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- CSS -->
 
-    <script>
-      window.onload = function() {
-        // create a heatmap instance
-        var heatmap = h337.create({
-          container: document.getElementById('heatmapContainer'),
-          maxOpacity: .6,
-          radius: 50,
-          blur: .90,
-          // backgroundColor with alpha so you can see through it
-          backgroundColor: '#3628252'
-        });
-        var heatmapContainer = document.getElementById('heatmapContainerWrapper');
-        heatmapContainer.onmousemove = heatmapContainer.ontouchmove = function(e) {
-          // we need preventDefault for the touchmove
-          e.preventDefault();
-          var x = e.layerX;
-          var y = e.layerY;
-          if (e.touches) {
-            x = e.touches[0].pageX;
-            y = e.touches[0].pageY;
-          }
-          
-          heatmap.addData({ x: x, y: y, value: 1 });
-        };
-        heatmapContainer.onclick = function(e) {
-          var x = e.layerX;
-          var y = e.layerY;
-          heatmap.addData({ x: x, y: y, value: 1 });
-        };
-      };
-    </script>
-  </body>
-  <script src="js/jquery-2.1.4.js"></script>
-<script src="js/main.js"></script>
+
+chart.on('draw', function(data) {
+  if(data.type === 'slice') {
+    // Get the total path length in order to use for dash array animation
+    var pathLength = data.element._node.getTotalLength();
+
+    // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+    data.element.attr({
+      'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+    });
+
+    // Create animation definition while also assigning an ID to the animation for later sync usage
+    var animationDefinition = {
+      'stroke-dashoffset': {
+        id: 'anim' + data.index,
+        dur: 500,
+        from: -pathLength + 'px',
+        to:  '0px',
+        easing: Chartist.Svg.Easing.easeOutQuint,
+        // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+        fill: 'freeze'
+      }
+    };
+
+    // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+    if(data.index !== 0) {
+      animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+    }
+
+    // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+    data.element.attr({
+      'stroke-dashoffset': -pathLength + 'px'
+    });
+
+    // We can't use guided mode as the animations need to rely on setting begin manually
+    // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+    data.element.animate(animationDefinition, false);
+  }
+});
+
+
+
+//chart 2
+
+var chart = new Chartist.Line('#chart2', {
+  labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+  series: [
+    [12, 9, 7, 8, 5, 4, 6, 2, 3, 3, 4, 6],
+    [4,  5, 3, 7, 3, 5, 5, 3, 4, 4, 5, 5],
+    [5,  3, 4, 5, 6, 3, 3, 4, 5, 6, 3, 4],
+    [3,  4, 5, 6, 7, 6, 4, 5, 6, 7, 6, 3]
+  ]
+}, {
+  low: 0
+});
+
+// Let's put a sequence number aside so we can use it in the event callbacks
+var seq = 0,
+  delays = 80,
+  durations = 500;
+
+// Once the chart is fully created we reset the sequence
+chart.on('created', function() {
+  seq = 0;
+});
+
+// On each drawn element by Chartist we use the Chartist.Svg API to trigger SMIL animations
+chart.on('draw', function(data) {
+  seq++;
+
+  if(data.type === 'line') {
+    // If the drawn element is a line we do a simple opacity fade in. This could also be achieved using CSS3 animations.
+    data.element.animate({
+      opacity: {
+        // The delay when we like to start the animation
+        begin: seq * delays + 1000,
+        // Duration of the animation
+        dur: durations,
+        // The value where the animation should start
+        from: 0,
+        // The value where it should end
+        to: 1
+      }
+    });
+  } else if(data.type === 'label' && data.axis === 'x') {
+    data.element.animate({
+      y: {
+        begin: seq * delays,
+        dur: durations,
+        from: data.y + 100,
+        to: data.y,
+        // We can specify an easing function from Chartist.Svg.Easing
+        easing: 'easeOutQuart'
+      }
+    });
+  } else if(data.type === 'label' && data.axis === 'y') {
+    data.element.animate({
+      x: {
+        begin: seq * delays,
+        dur: durations,
+        from: data.x - 100,
+        to: data.x,
+        easing: 'easeOutQuart'
+      }
+    });
+  } else if(data.type === 'point') {
+    data.element.animate({
+      x1: {
+        begin: seq * delays,
+        dur: durations,
+        from: data.x - 10,
+        to: data.x,
+        easing: 'easeOutQuart'
+      },
+      x2: {
+        begin: seq * delays,
+        dur: durations,
+        from: data.x - 10,
+        to: data.x,
+        easing: 'easeOutQuart'
+      },
+      opacity: {
+        begin: seq * delays,
+        dur: durations,
+        from: 0,
+        to: 1,
+        easing: 'easeOutQuart'
+      }
+    });
+  } else if(data.type === 'grid') {
+    // Using data.axis we get x or y which we can use to construct our animation definition objects
+    var pos1Animation = {
+      begin: seq * delays,
+      dur: durations,
+      from: data[data.axis.units.pos + '1'] - 30,
+      to: data[data.axis.units.pos + '1'],
+      easing: 'easeOutQuart'
+    };
+
+    var pos2Animation = {
+      begin: seq * delays,
+      dur: durations,
+      from: data[data.axis.units.pos + '2'] - 100,
+      to: data[data.axis.units.pos + '2'],
+      easing: 'easeOutQuart'
+    };
+
+    var animations = {};
+    animations[data.axis.units.pos + '1'] = pos1Animation;
+    animations[data.axis.units.pos + '2'] = pos2Animation;
+    animations['opacity'] = {
+      begin: seq * delays,
+      dur: durations,
+      from: 0,
+      to: 1,
+      easing: 'easeOutQuart'
+    };
+
+    data.element.animate(animations);
+  }
+});
+
+// For the sake of the example we update the chart every time it's created with a delay of 10 seconds
+chart.on('created', function() {
+  if(window.__exampleAnimateTimeout) {
+    clearTimeout(window.__exampleAnimateTimeout);
+    window.__exampleAnimateTimeout = null;
+  }
+  window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
+});
+</script>
+
+<script>
+function checkAddress(checkbox)
+{
+
+    if (checkbox.checked)
+    {
+        window.location.href = 'badUX.html';
+    }
+}
+</script>
+<script>
+$('.ios-toggle').removeAttr('checked');
+</script>
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+
+
+    <!-- Theme JavaScript -->
+    <script src="js/agency.min.js"></script>
+    <!-- Introjs -->
+    <script src="intro.js"></script>
+
+</body>
+
 </html>
