@@ -44,12 +44,12 @@
 
 <body id="page-top" class="index">
 
-    <div data-intro="<h3>Welcome to UX ME!</h3>This tutorial will demonstrate some of the techniques of exemplary UX design in the modern digital age. Skip through the sections by pressing the next button or arrow keys to see the different elements and why they are important.">
+    <div data-step="1" data-intro="<h3>Welcome to UX ME!</h3>This tutorial will demonstrate some of the techniques of exemplary UX design in the modern digital age. Skip through the sections by pressing the next button or arrow keys to see the different elements and why they are important.">
         <!-- Navigation -->
-        <nav style="position:fixed; z-index:1;" id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top" data-intro="Transparent nav background adds to the minimal design. Scroll down the page and you will see the navbar becomes fixed. This means it stays at the top of the browser window even when you are scrolling. Having a 'fixed' navbar allows the user to navigate the site even when they are scrolled half way down a page.">
+        <nav style="position:fixed; z-index:1;" id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top" data-step="2" data-intro="Transparent nav background adds to the minimal design. Scroll down the page and you will see the navbar becomes fixed. This means it stays at the top of the browser window even when you are scrolling. Having a 'fixed' navbar allows the user to navigate the site even when they are scrolled half way down a page.">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div data-position="right" data-intro="Navbar is simple and organised with bold readable font and logo on the left." class="navbar-header page-scroll">
+                <div data-position="right" data-step="3" data-intro="Navbar is simple and organised with bold readable font and logo on the left." class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                     </button>
@@ -57,13 +57,13 @@
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div data-intro="Spacing of navbars is important, logo on the left and links on the right is the most common method however centred links underneath a logo is common. Pullout drawer menus made with Javascript are increasingly common to make websites feel more 'app' like" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div data-step="4" data-intro="Spacing of navbars is important, logo on the left and links on the right is the most common method however centred links underneath a logo is common. Pullout drawer menus made with Javascript are increasingly common to make websites feel more 'app' like" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="hidden">
                             <a href="#page-top"></a>
                         </li>
                         <li>
-                          <div id="toggles">
+                          <div data-step="13" data-intro="Click here to continue and see an example of a poorly designed user experience." id="toggles">
                           <input type="checkbox" name="checkbox1" id="checkbox1" class="ios-toggle" onclick="checkAddress(this)"/>
                           <label for="checkbox1" class="checkbox-label" data-off="Good UX Site" data-on="Good UX"></label>
                         </div>
@@ -73,7 +73,7 @@
                         </li>
                          <li>
 
-                            <a class="page-scroll login-btn" href="#login-modal" data-toggle="modal"><span data-intro="Login button has unique colour from others in the navbar, this makes it more attractive to the user. Buttons such as these should stand out because the user's primary objective when visiting a site is to use/login to the company's service. Click on this button to see the login screen." data-position="left" class="login-style">Login</span></a>
+                            <a class="page-scroll login-btn" href="#login-modal" data-toggle="modal"><span data-step="6" data-intro="Login button has unique colour from others in the navbar, this makes it more attractive to the user. Buttons such as these should stand out because the user's primary objective when visiting a site is to use/login to the company's service. Click on this button to see the login screen." data-position="left" class="login-style">Login</span></a>
 
                         </li>
                     </ul>
@@ -89,11 +89,11 @@
         <header>
             <div class="container">
                 <div class="intro-text">
-                    <div data-hint="Using sans-serif websafe fonts such as Montserrat or Helvetica Neue is very beneficial for front-end web design. They are compatible on most browsers and devices and you can find hundreds of websafe fonts on <a href='http://google.com/fonts'>Google Fonts</a>. They are also available as hosted libraries so no need for those pesky font files!!" data-intro="Main outstanding site title against image background, usually used as a tagline or catchphrase for a company. Layout of this title is often left aligned with a featured hero image on the right" class="intro-heading">This is good UX.  </div>
-                    <a href="javascript:void(0)" onclick="introJs().start();" data-intro="Large eye catching button centred in the middle of the page indicating a main feature or action such as a login or a 'Sign Up' button." class="page-scroll btn btn-xl">Start the tutorial</a>
+                    <div data-hint="Using sans-serif websafe fonts such as Montserrat or Helvetica Neue is very beneficial for front-end web design. They are compatible on most browsers and devices and you can find hundreds of websafe fonts on <a href='http://google.com/fonts'>Google Fonts</a>. They are also available as hosted libraries so no need for those pesky font files!!" data-step="7" data-intro="Main outstanding site title against image background, usually used as a tagline or catchphrase for a company. Layout of this title is often left aligned with a featured hero image on the right" class="intro-heading">This is good UX.  </div>
+                    <a href="javascript:void(0)" onclick="introJs().start();" data-step="8" data-intro="Large eye catching button centred in the middle of the page indicating a main feature or action such as a login or a 'Sign Up' button." class="page-scroll btn btn-xl">Start the tutorial</a>
                     <br>
                     <br>
-                    <a href="javascript:void(0);" onclick="introJs().addHints();" data-hint="Click on the little red beacons to find some useful UX tips to keep in mind when designing your websites" data-intro="Smaller 'sub' button with no fill, usually used to indicate an additional or optional feature" data-position="top" class="page-scroll btn btn-md">See some handy UX tips</a>
+                    <a href="javascript:void(0);" onclick="introJs().addHints();" data-hint="Click on the little red beacons to find some useful UX tips to keep in mind when designing your websites" data-step="9" data-intro="Smaller 'sub' button with no fill, usually used to indicate an additional or optional feature" data-position="top" class="page-scroll btn btn-md">See some handy UX tips</a>
                 </div>
             </div>
         </header>
@@ -103,7 +103,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Attributes Of Good UX Design</h2>
+                        <h2 data-step="10"  data-intro="This section is often used for a brief overview of a company's products. It is usually a small section with a short blurb about the main services that are provided. Icons are really useful in this situation giving aesthetic appeal." class="section-heading">Attributes Of Good UX Design</h2>
                         <br>
                         <br>
                         <br>
@@ -150,7 +150,7 @@
                 <div class="row">
                 </div>
                 <br><br><br><br>
-                <div class="row" data-intro="More in-depth information about site features. The layout of this section commonly has an image on one side and text on another. If there are multiple elements this layout is often reversed to bring variety to the container. Usually this section shows a further explanation of the services that a website provides" data-position="top" data-hint="Front-end web frameworks such as Bootstrap are incredibly handy for laying out responsive content on a website or app. The graphs below and this entire website are built using the Bootstrap grid system Click <a href='http://www.bootstrap.com'>here</a> to see more information about Bootstrap" >
+                <div class="row" data-step="11" data-intro="More in-depth information about site features. The layout of this section commonly has an image on one side and text on another. If there are multiple elements this layout is often reversed to bring variety to the container. Usually this section shows a further explanation of the services that a website provides" data-position="top" data-hint="Front-end web frameworks such as Bootstrap are incredibly handy for laying out responsive content on a website or app. The graphs below and this entire website are built using the Bootstrap grid system Click <a href='http://www.bootstrap.com'>here</a> to see more information about Bootstrap" >
                     <div class="col-md-6">
                   <div data-hint="These animated graphs were made using a JS library called Chartist.js. The data is hard coded into these graphs but they are really useful for making your website and your data look even more attractive! Check out Chartist.js <a href='http://gionkunz.github.io/chartist-js/examples.html#svg-path-animation'>here</a>" class="ct-chart ct-perfect-fourth" id="chart2"></div>
                     </div>
@@ -158,7 +158,7 @@
                       <h2 style="margin-top: 15%;">Demonstrating Dynamics</h2>
                     <p>Simple, clear infographics can be alot more attractive to a user than static grids of data. User's are much more likely to become engaged in a feature if they like the look of it. Adding vibrant colours and fancy animations can help greatly with this! Often another button is added underneath this text to lead a user to the relevant talked about feature. </p>
                     <br>
-                    <button class="btn btn-lg text-center " style="width:30% height: 4rem; font-size: 1.5rem; background-color:#DB162F; color:#fff; font-family: 'Montserrat">This doesn't do anything</button>
+                    <button class="btn btn-lg text-center " style="width:30% height: 4rem; font-size: 1.5rem; background-color:#DB162F; color:#fff; font-family: 'Montserrat">Pretty Button</button>
                     </div>
                 </div>
                 <div style="margin-top: 10%;" class="row">
@@ -181,7 +181,7 @@
                 <div class="row">
                   <div class="col-md-4">
                   </div>
-                    <div class="col-md-4 text-center" data-hint="Compare the layout of this form to the layout of the login form in the navbar, see if you can see the similarities." data-position="right" data-intro="Forms are really useful for user engagement also. Placing them after the main content at the bottom of the page is very common in modern UX design. If the user is wanting more information this is a great way to get it to them.
+                    <div class="col-md-4 text-center" data-hint="Compare the layout of this form to the layout of the login form in the navbar, see if you can see the similarities." data-position="right" data-step="12" data-intro="Forms are really useful for user engagement also. Placing them after the main content at the bottom of the page is very common in modern UX design. If the user is wanting more information this is a great way to get it to them.
                     form styling should be consistent across a site. For example the text inputs should be the same colour and size. It is also important to keep form groups consise, for example all that is needed for this is an email address and name.">
                         <h2 class="section-heading">Get in touch!</h2>
                         <h3 class="section-subheading text-muted">If you would like to know more about UX techniques fill out the form below!</h3>

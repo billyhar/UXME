@@ -7,6 +7,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link href="introjs.css" rel="stylesheet">
+  <script src="intro.js"></script>
 
 </head>
 
@@ -16,20 +18,22 @@
 <body>
     <!-- Modal content -->
 
-    <div href="#register" class="collapse modal-content">
+    <div href="#register" data-hint="Welcome to the login screen! You might have noticed that it is a separate page from the home page. Whilst this isn't uncommon it is good practice in modern UX design to have a 'modal' or a window inside the current page you are on, similar to the good UX site. This ensures the user isn't fully taken away from the content on the main screen if they suddenly decide they don't want to sign up anymore." class="collapse modal-content">
       <h2>Login</h2>
       <br>
       <p>Email Address</p><input class="username" type="text" />
         <p>Password</p><input class="password" type="password"/>
         <br>
         <button data-toggle="collapse" data-target="register"><a  href="BadUX.html">Login</a></button>
+        <button   onclick="introJs().addHints()" data-toggle="collapse" data-target="register">See Hints!</button>
 
 
+
 <br>
 <br>
 <br>
 <br>
-      <h2> Register Your Details Here </h2>
+      <h2 data-hint="Long forms are a user's worst nightmare. Try to keep the signup process for your site as small as possible. A GOOD TIP: Implement automated social media authentication to save the user time when signing up."> Register Your Details Here </h2>
       <br>
     <p>First Name</p><input class="username" type="text" />
       <p>Last Name</p><input class="password" type="text"/>
@@ -68,5 +72,11 @@
 
 
 </body>
+
+<script type="text/javascript">
+  if (RegExp('multipage', 'gi').test(window.location.search)) {
+    introJs().start();
+  }
+</script>
 
 </html>

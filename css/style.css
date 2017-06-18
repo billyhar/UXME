@@ -13,7 +13,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Times New Roman", sans-serif;
   color: #f4442e;
   background-color: #000000;
 }
@@ -87,6 +87,15 @@ min-height: 700px;
 background-color: #333333;
 padding: 50px;
 text-align: left;
+}
+
+.panel3{
+
+width: 100%;
+min-height: 300px;
+background-color: #fff;
+padding: 50px;
+text-align: center;
 }
 
 
